@@ -1,0 +1,69 @@
+<div class="container-xxl">
+  <div class="row vh-100 justify-content-center">
+    <div class="col-12 col-md-8 col-xl-4 align-self-center text-center">
+      <div class="text-center mb-3" *ngIf="mensaje">
+        {{ mensaje }}
+      </div>
+      <h1 class="mb-3">Crear persona</h1>
+      <form [formGroup]="personaForm" (ngSubmit)="crearPersona()">
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            name="nombres"
+            formControlName="Nombres"
+          />
+          <label>Nombres</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            name="apellidos"
+            formControlName="Apellidos"
+          />
+          <label>Apellidos</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            name="numeroIdentificacion"
+            formControlName="NumeroIdentificacion"
+          />
+          <label>Numero de identificación</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            name="tipoIdentificacion"
+            formControlName="TipoIdentificacion"
+          />
+          <label>Tipo de identificación</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control"
+            name="email"
+            formControlName="Email"
+          />
+          <label>Correo</label>
+        </div>
+
+        <button
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="!personaForm.valid"
+        >
+          Crear Persona
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

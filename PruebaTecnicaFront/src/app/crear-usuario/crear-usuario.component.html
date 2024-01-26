@@ -1,0 +1,39 @@
+<div class="container-xxl">
+   <div class="row vh-100 justify-content-center">
+     <div class="col-12 col-md-8 col-xl-4 align-self-center text-center">
+       <div class="text-center mb-3" *ngIf="mensaje">
+         {{ mensaje }}
+       </div>
+       <h1 class="mb-3">Crear usuario</h1>
+       <form [formGroup]="usuarioForm" (ngSubmit)="crearUsuario()">
+         <div class="form-floating mb-3">
+           <input
+             type="text"
+             class="form-control"
+             name="nombreUsuario"
+             formControlName="nombreUsuario"
+           />
+           <label>Nombre de usuario</label>
+         </div>
+ 
+         <div class="form-floating mb-3">
+           <input
+             type="password"
+             class="form-control"
+             name="contrasena"
+             formControlName="contrasena"
+           />
+           <label>Contraseña</label>
+         </div>
+ 
+         <button
+           class="btn btn-primary"
+           type="submit"
+           [disabled]="!usuarioForm.valid"
+         >
+           Crear Usuario
+         </button>
+       </form>
+     </div>
+   </div>
+ </div>
